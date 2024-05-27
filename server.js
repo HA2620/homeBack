@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('../frontend'));
 
-mongoose.connect("mongodb+srv://harshprasad669:DlrEvHBznVir0uSf@properties.jmfqh1l.mongodb.net/?retryWrites=true&w=majority&appName=properties", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
